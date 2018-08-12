@@ -9,7 +9,7 @@ import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-    EditText nameEditText, rollnumEditText, branchEditText, courseEditText;
+    EditText nameEditText, rollnumEditText, branchEditText, course1EditText, course2EditText, course3EditText, course4EditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,10 @@ public class MainActivity extends AppCompatActivity {
         nameEditText = (EditText)findViewById(R.id.nameEditText);
         rollnumEditText = (EditText)findViewById(R.id.rollnumEditText);
         branchEditText = (EditText)findViewById(R.id.branchEditText);
-        courseEditText = (EditText)findViewById(R.id.courseEditText);
+        course1EditText = (EditText)findViewById(R.id.course1EditText);
+        course2EditText = (EditText)findViewById(R.id.course2EditText);
+        course3EditText = (EditText)findViewById(R.id.course3EditText);
+        course4EditText = (EditText)findViewById(R.id.course4EditText);
     }
     @Override
     protected void onStart() {
@@ -58,27 +61,42 @@ public class MainActivity extends AppCompatActivity {
         nameEditText.setText("");
         rollnumEditText.setText("");
         branchEditText.setText("");
-        courseEditText.setText("");
+        course1EditText.setText("");
+        course2EditText.setText("");
+        course3EditText.setText("");
+        course4EditText.setText("");
     }
     public void submitForm(View view) {
         String name = nameEditText.getText().toString();
         String rollnum = rollnumEditText.getText().toString();
         String branch = branchEditText.getText().toString();
-        String course = courseEditText.getText().toString();
+        String course1 = course1EditText.getText().toString();
+        String course2 = course2EditText.getText().toString();
+        String course3 = course3EditText.getText().toString();
+        String course4 = course4EditText.getText().toString();
         if(name.equals(""))
             Toast.makeText(getApplicationContext(), "Please enter name", Toast.LENGTH_LONG).show();
         else if(rollnum.equals(""))
             Toast.makeText(getApplicationContext(), "Please enter roll no.", Toast.LENGTH_LONG).show();
         else if(branch.equals(""))
             Toast.makeText(getApplicationContext(), "Please enter branch", Toast.LENGTH_LONG).show();
-        else if(course.equals(""))
-            Toast.makeText(getApplicationContext(), "Please enter course", Toast.LENGTH_LONG).show();
+        else if(course1.equals(""))
+            Toast.makeText(getApplicationContext(), "Please enter course1", Toast.LENGTH_LONG).show();
+        else if(course2.equals(""))
+            Toast.makeText(getApplicationContext(), "Please enter course2", Toast.LENGTH_LONG).show();
+        else if(course3.equals(""))
+            Toast.makeText(getApplicationContext(), "Please enter course3", Toast.LENGTH_LONG).show();
+        else if(course4.equals(""))
+            Toast.makeText(getApplicationContext(), "Please enter course4", Toast.LENGTH_LONG).show();
         else {
             Intent intent = new Intent(getApplicationContext(), DisplayActivity.class);
             intent.putExtra("name", name);
             intent.putExtra("rollnum", rollnum);
             intent.putExtra("branch", branch);
-            intent.putExtra("course", course);
+            intent.putExtra("course1", course1);
+            intent.putExtra("course2", course2);
+            intent.putExtra("course3", course3);
+            intent.putExtra("course4", course4);
             startActivity(intent);
         }
     }

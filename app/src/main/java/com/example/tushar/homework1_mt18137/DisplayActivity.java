@@ -17,11 +17,17 @@ public class DisplayActivity extends AppCompatActivity {
         TextView nameTextView = (TextView)findViewById(R.id.nameTextView);
         TextView rollnumTextView = (TextView)findViewById(R.id.rollnumTextView);
         TextView branchTextView = (TextView)findViewById(R.id.branchTextView);
-        TextView courseTextView = (TextView)findViewById(R.id.courseTextView);
+        TextView course1TextView = (TextView)findViewById(R.id.course1TextView);
+        TextView course2TextView = (TextView)findViewById(R.id.course2TextView);
+        TextView course3TextView = (TextView)findViewById(R.id.course3TextView);
+        TextView course4TextView = (TextView)findViewById(R.id.course4TextView);
         nameTextView.setText(intent.getStringExtra("name"));
         rollnumTextView.setText(intent.getStringExtra("rollnum"));
         branchTextView.setText(intent.getStringExtra("branch"));
-        courseTextView.setText(intent.getStringExtra("course"));
+        course1TextView.setText(intent.getStringExtra("course1"));
+        course2TextView.setText(intent.getStringExtra("course2"));
+        course3TextView.setText(intent.getStringExtra("course3"));
+        course4TextView.setText(intent.getStringExtra("course4"));
     }
     @Override
     protected void onStart() {
